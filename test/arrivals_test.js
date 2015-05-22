@@ -7,18 +7,16 @@ var expect = require("expect.js"),
 
 
 var apiKeys =  JSON.parse(fs.readFileSync('.apikey', 'utf8'));
-var options = { key: apiKeys["trainApiKey"], }
+arrivals.key = apiKeys["trainApiKey"]
 
 describe("Arrivals", function(){
   before(function(){
-    // ...
   });
 
   describe("#byStationNameAndColor()", function() {
-        arrivals.byStationNameAndColor('wilson', 'red')
+        arrivals.byStationNameAndColor('sheridan', 'red')
           .then(function(arr) { 
-            console.dir(arr.attributes["eta"]);
-            expect(arr.attributes).to.not.be.empty();
+            expect(arr).to.not.be.empty();
           })
           .then(null, console.log)
           .done()
@@ -29,29 +27,19 @@ describe("Arrivals", function(){
       arrivals.options = {}
     })
   }),
+
   describe('#fetch()', function(){
     context('something', function(){
       it('fetchs the ariival response', function(){
-        arrivals.options = {
-          key: apiKeys["trainApiKey"], 
-          max: "3",
-          mapid: "40360"
-        };
+        var options = { key: arrivals.key, max: 5, mapid: "40360" };
 
-        arrivals.fetch()
+        arrivals.fetch(options)
           .then(function(arr) { 
-            expect(arr.attributes).to.not.be.empty();
+            expect(arr).to.not.be.empty();
           })
           .then(null, console.log)
           .done()
       });
     });
   });
-
-  describe("#station_id()", function() {
-    it("returns the statid", function() { 
-      arrivals.attributes = fixtures.responses["arrivalsJSON"]["ctatt"];
-      //expect(arrivals.attributes).to.eql(true);
-    })
-  })
 });

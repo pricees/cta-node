@@ -24,7 +24,6 @@ describe("cta-node", function() {
 
     it("to have lStops", function() { 
       expect(cta.train.lStops).to.be.ok();
-      console.dir(cta.train.lStops.byStationName('wilson'));
     });
   });
 
