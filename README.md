@@ -15,6 +15,15 @@ TODO: Describe the installation process
 ## Usage
 
 ```javascript 
+  var cta = require("cta-node");
+  cta.init({ trainApiKey: "abc...", busApiKey: "123..."});
+  cta.train.lStops.byStationName('wilson');
+  // array of stops
+```
+  cta.train.arrivals.byStationNameAndColor('western', 'blue');
+  // array of arrivals
+
+```javascript 
     cta.lStops = require("cta");
     cta.lStops.byStopName('Western')
     // [ arrray of Western stops]

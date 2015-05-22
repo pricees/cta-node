@@ -1,6 +1,7 @@
 var expect = require("expect.js"),
     arrivals = require("../lib/arrivals.js"),
     Q = require('q'),
+    fs = require('fs'),
     sinon = require("sinon")
     , fixtures = require("./response_fixtures.js");
 
@@ -14,13 +15,18 @@ describe("Arrivals", function(){
   });
 
   describe("#byStationNameAndColor()", function() {
-    expect(arrivals.byStationNameAndColor('wilson', 'red')).to.be.equal(['40540']);
+        arrivals.byStationNameAndColor('wilson', 'red')
+          .then(function(arr) { 
+            console.dir(arr.attributes["eta"]);
+            expect(arr.attributes).to.not.be.empty();
+          })
+          .then(null, console.log)
+          .done()
   });
 
   describe("#validations()", function() {
     it("requires a mapid", function() {
-      attrivals.options = {}
-
+      arrivals.options = {}
     })
   }),
   describe('#fetch()', function(){
@@ -45,7 +51,7 @@ describe("Arrivals", function(){
   describe("#station_id()", function() {
     it("returns the statid", function() { 
       arrivals.attributes = fixtures.responses["arrivalsJSON"]["ctatt"];
-      expect(arrivals.attributes).to.eql(true);
+      //expect(arrivals.attributes).to.eql(true);
     })
   })
 });
