@@ -1,8 +1,9 @@
-var expect = require("expect.js"),
-    arrivals = require("../lib/arrivals.js"),
-    Q = require('q'),
-    fs = require('fs'),
-    sinon = require("sinon")
+var expect = require("expect.js")
+    , arrivals = require("../lib/arrivals.js")
+    , dateHelper = require("../lib/date_helper.js")
+    , Q = require('q')
+    , fs = require('fs')
+    , sinon = require("sinon")
     , fixtures = require("./response_fixtures.js");
 
 
@@ -32,7 +33,6 @@ describe("Arrivals", function(){
     context('something', function(){
       it('fetchs the ariival response', function(){
         var options = { key: arrivals.key, max: 5, mapid: "40360" };
-
         arrivals.fetch(options)
           .then(function(arr) { 
             expect(arr).to.not.be.empty();
