@@ -1,6 +1,5 @@
 var expect = require("expect.js")
     , arrivals = require("../lib/arrivals.js")
-    , dateHelper = require("../lib/date_helper.js")
     , Q = require('q')
     , fs = require('fs')
     , sinon = require("sinon")
