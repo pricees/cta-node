@@ -7,6 +7,7 @@ Chicago Transit Authority - Bus and Train Tracker - Node JS module
 ## Special Note
 
 First node project. All feedback is appreciated
+__This package will change drastically over the next couple of releases.__
 
 ## Installation
 
