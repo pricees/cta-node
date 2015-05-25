@@ -1,8 +1,8 @@
 {
   "name": "cta-node",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "# Project Name",
-  "main": "cat-node.js",
+  "main": "lib/cta-node.js",
   "scripts": {
     "test": "mocha test/.*js"
   },

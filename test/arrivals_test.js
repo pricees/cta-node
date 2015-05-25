@@ -6,8 +6,8 @@ var expect = require("expect.js")
     , fixtures = require("./response_fixtures.js");
 
 
-var apiKeys =  JSON.parse(fs.readFileSync('.apikey', 'utf8'));
-arrivals.key = apiKeys["trainApiKey"]
+// Set key from env variable for this release
+arrivals.key = process.env.CTA_TRAIN_API_KEY; 
 
 describe("Arrivals", function(){
   before(function(){

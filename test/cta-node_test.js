@@ -1,16 +1,12 @@
-var expect = require("expect.js"),
-    fs = require('fs'),
-    sinon = require("sinon")
+var expect = require("expect.js")
+    , fs = require('fs')
+    , sinon = require("sinon")
+    , cta = require("../lib/cta-node.js");
 
-var apiKeys =  JSON.parse(fs.readFileSync('.apikey', 'utf8'));
-var options = { key: apiKeys["trainApiKey"] }
-
-  var cta = require("../lib/cta-node.js");
 describe("cta-node", function() {
 
-
   before(function() {
-    cta.init(apiKeys);
+    cta.init();
   });
 
   describe(".train", function() {
