@@ -31,7 +31,7 @@ TODO: Describe the installation process
   // array of stops
   cta.train.lStops.byStationNameAndColor('western', 'blue');
   // array of stops
-```
+
   cta.train.arrivals.byStationNameAndColor('western', 'blue');
   // array of arrivals
 
