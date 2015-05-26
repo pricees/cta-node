@@ -14,12 +14,23 @@ describe("Arrivals", function(){
   });
 
   describe("#byStationNameAndColor()", function() {
+    it("accepts a name and color", function() {
         arrivals.byStationNameAndColor('sheridan', 'red')
           .then(function(arr) { 
             expect(arr).to.not.be.empty();
           })
           .then(null, console.log)
           .done()
+    });
+
+    it("gracefully handles no color", function() {
+        arrivals.byStationNameAndColor('sheridan')
+          .then(function(arr) { 
+            expect(arr).to.not.be.empty();
+          })
+          .then(null, console.log)
+          .done()
+    });
   });
 
   describe("#validations()", function() {

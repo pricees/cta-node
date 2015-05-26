@@ -1,6 +1,6 @@
 {
   "name": "cta-node",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "# Project Name",
   "main": "lib/cta-node.js",
   "scripts": {

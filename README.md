@@ -35,6 +35,11 @@ TODO: Describe the installation process
   cta.train.arrivals.byStationNameAndColor('western', 'blue');
   // array of arrivals
 
+  // Look ma, no color... 
+  // NOTE: this is going to change
+  cta.train.arrivals.byStationNameAndColor('sheridan');
+  // array of arrivals
+
 ```
 
 ## Contributing
