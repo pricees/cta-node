@@ -24,7 +24,7 @@ describe("Arrivals", function(){
     });
 
     it("gracefully handles no color", function() {
-        arrivals.byStationNameAndColor('sheridan')
+        arrivals.byStationNameAndColor('sheridan', "")
           .then(function(arr) { 
             expect(arr).to.not.be.empty();
           })
